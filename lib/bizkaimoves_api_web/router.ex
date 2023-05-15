@@ -7,6 +7,7 @@ defmodule BizkaimovesApiWeb.Router do
 
   scope "/api", BizkaimovesApiWeb do
     pipe_through :api
+    resources "/stops", StopController, except: [:new, :edit]
   end
 
   # Enable LiveDashboard and Swoosh mailbox preview in development
