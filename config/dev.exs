@@ -5,7 +5,7 @@ config :bizkaimoves_api, BizkaimovesApi.Repo,
   username: "postgres",
   password: "postgres",
   hostname: "localhost",
-  database: "bizkaimoves_api_dev",
+  database: "bizkaibus_db_05_23",
   stacktrace: true,
   show_sensitive_data_on_connection_error: true,
   pool_size: 10

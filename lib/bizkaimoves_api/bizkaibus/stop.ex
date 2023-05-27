@@ -8,6 +8,7 @@ defmodule BizkaimovesApi.Bizkaibus.Stop do
     field :stop_code, :string
     field :stop_id, :string
     field :stop_name, :string
+    field(:stop_loc, Geo.PostGIS.Geometry)
 
     timestamps()
   end
@@ -15,7 +16,7 @@ defmodule BizkaimovesApi.Bizkaibus.Stop do
   @doc false
   def changeset(stop, attrs) do
     stop
-    |> cast(attrs, [:stop_id, :stop_code, :stop_name])
-    |> validate_required([:stop_id, :stop_code, :stop_name])
+    |> cast(attrs, [:stop_id, :stop_code, :stop_name, :stop_loc])
+    |> validate_required([:stop_id, :stop_code, :stop_name, :stop_loc])
   end
 end

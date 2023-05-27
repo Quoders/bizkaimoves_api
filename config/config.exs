@@ -11,6 +11,9 @@ config :bizkaimoves_api,
   ecto_repos: [BizkaimovesApi.Repo],
   generators: [binary_id: true]
 
+config :bizkaimoves_api, BizkaimovesApi.Repo,
+  types: BizkaimovesApi.PostgresTypes
+
 # Configures the endpoint
 config :bizkaimoves_api, BizkaimovesApiWeb.Endpoint,
   url: [host: "localhost"],
