@@ -17,3 +17,8 @@ We use https://github.com/blinktaginc/node-gtfs to parse GTFS files into a SQLit
   ]
 }
 ```
+
+- Execute the script to generate the database:
+```
+gtfs-import --configPath /path/to/your/custom-config.json
+```
