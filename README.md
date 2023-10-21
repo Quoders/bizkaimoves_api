@@ -1,8 +1,9 @@
 # BizkaimovesApi
+The backend that support Bizkaimoves application.
 
-## Learn more
+## Generate a SQLite database from GTFS
+We use https://github.com/blinktaginc/node-gtfs to parse GTFS files into a SQLite database:
 
-Steps to create a SQLite database from GTFS files:
 - Create a gtfs_config file, it should looks something like this:
 
 ```
