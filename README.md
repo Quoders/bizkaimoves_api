@@ -1,8 +1,9 @@
 # BizkaimovesApi
+The backend that support Bizkaimoves application.
 
-## Learn more
+## Generate a SQLite database from GTFS
+We use https://github.com/blinktaginc/node-gtfs to parse GTFS files into a SQLite database:
 
-Steps to create a SQLite database from GTFS files:
 - Create a gtfs_config file, it should looks something like this:
 
 ```
@@ -16,3 +17,19 @@ Steps to create a SQLite database from GTFS files:
   ]
 }
 ```
+
+- Execute the script to generate the database:
+```
+gtfs-import --configPath /path/to/your/custom-config.json
+```
+
+- Convert the generated SQLite database to Postgres:
+
+  1.- Create a new postgree database:
+  ```
+  createdb my_postgres_db
+  ```
+  2.- Use pgloader to perform the migration:
+  ```
+  pgloader sqlite:///path_to_your_sqlite.db postgresql:///my_postgres_db
+  ```
