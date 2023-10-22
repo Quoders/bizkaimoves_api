@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: "Bizkaibus REST API"
+  description: "The Bizkaibus backend API."
+  version: "1.0.0"
+
+servers:
+  - url: "/api"
+
+paths:
+  /routes:
+    get:
+      operationId: "routes.read_all"
+      tags:
+        - "Routes"
+      summary: "Read the list of routes"
+      responses:
+        "200":
+          description: "Successfully read route list"
+
+  /routes/{route_id}:
+    get:
+      operationId: "routes.read_one"
+      tags:
+        - Route
+      summary: "Read a route"
+      parameters:
+        - $ref: "#/components/parameters/route_id"
+      responses:
+        "200":
+          description: "Successfully read route"        
+
+components:
+  schemas:
+    Route:
+      type: "object"
+      required:
+        - route_id
+      properties:
+        route_id:
+          type: "string"
+        route_short_name:
+          type: "string"
+        route_long_name:
+          type: "string"
+        route_url:
+          type: "string"
+  parameters:
+    route_id:
+      name: "route_id"
+      description: "Id of the route to get"
+      in: path
+      required: True
+      schema:
+        type: "string"          

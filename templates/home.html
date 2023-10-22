@@ -1,0 +1,19 @@
+<!-- templates/home.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RP Flask REST API</title>
+</head>
+<body>
+    <h1>
+        Bizkaibus routes
+    </h1>
+    <ul>
+        {% for route in routes %}
+        <li>{{ route.route_id }} {{ route.route_long_name }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
